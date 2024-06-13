@@ -53,7 +53,7 @@ cols=[
     'COMUNA_OCURR', # identificar la comuna
     'CODIGO_DEIS', 'ESTABLECIMIENTO', # Identificacion del vacunatorio
     'LOTE', # Identificar lote Ministerial
-    'FECHA_INMUNIZACION',
+    'FECHA_INMUNIZACION', # Se utiliza para establecer tiempos
     'DOSIS', # Filtro 'DOSIS' != 'EPRO'
     'VACUNA_ADMINISTRADA', # Filtro 'VACUNA_ADMINISTRADA' == 'SI'
     'REGISTRO_ELIMINADO', # Filtro 'REGISTRO_ELIMINADO' == 'NO'
@@ -84,19 +84,45 @@ df_vac_rm_filter_lote_minist = agregar_vacunacion_dias(df_vac_rm_filter_lote_min
 
 #%%
 # Agrupar y sumar las vacunaciones por comuna y establecimiento
-reporte = df_vac_rm_filter_lote_minist.groupby(['COMUNA_OCURR', 'ESTABLECIMIENTO']).agg(
+reporte_minist = df_vac_rm_filter_lote_minist.groupby(['COMUNA_OCURR', 'ESTABLECIMIENTO']).agg(
     vacunacion_ultimos_3_dias=('vacunacion_ultimos_3_dias', 'sum'),
     vacunacion_ultimos_7_dias=('vacunacion_ultimos_7_dias', 'sum'),
     vacunacion_ultimos_14_dias=('vacunacion_ultimos_14_dias', 'sum')
 ).reset_index()
 
 #%%
-# Mostrar el reporte
-print(reporte)
+# Mostrar el reporte ministerial
+print(reporte_minist)
 
 #%%
 hoy = datetime.today()
 hoy_str = hoy.strftime('%Y%m%d')
-nombre_archivo = f'{hoy_str}_Reporte_vacunas_ministeriales.csv'
-reporte.to_csv(f'Reporte/{nombre_archivo}')
+nombre_archivo_minist = f'{hoy_str}_Reporte_vacunas_ministeriales.csv'
+reporte_minist.to_csv(f'Reporte/{nombre_archivo_minist}', index=False)
+
+#%%
+# Informe para vacunas privadas
+## Filtrar por lote privado
+df_vac_rm_filter_lote_priv=df_vac_rm_filter_lote.loc[df_vac_rm_filter_lote.TIPO_LOTE=='Privado']
+# %%
+# Aplicar la función para los últimos 3, 7 y 14 días
+df_vac_rm_filter_lote_priv = agregar_vacunacion_dias(df_vac_rm_filter_lote_priv, 3)
+df_vac_rm_filter_lote_priv = agregar_vacunacion_dias(df_vac_rm_filter_lote_priv, 7)
+df_vac_rm_filter_lote_priv = agregar_vacunacion_dias(df_vac_rm_filter_lote_priv, 14)
+
+#%%
+# Agrupar y sumar las vacunaciones por comuna y establecimiento
+reporte_priv = df_vac_rm_filter_lote_priv.groupby(['COMUNA_OCURR', 'ESTABLECIMIENTO']).agg(
+    vacunacion_ultimos_3_dias=('vacunacion_ultimos_3_dias', 'sum'),
+    vacunacion_ultimos_7_dias=('vacunacion_ultimos_7_dias', 'sum'),
+    vacunacion_ultimos_14_dias=('vacunacion_ultimos_14_dias', 'sum')
+).reset_index()
+
+#%%
+# Mostrar el reporte privado
+print(reporte_priv)
+
+#%%
+nombre_archivo_priv = f'{hoy_str}_Reporte_vacunas_privadas.csv'
+reporte_priv.to_csv(f'Reporte/{nombre_archivo_priv}', index=False)
 # %%
