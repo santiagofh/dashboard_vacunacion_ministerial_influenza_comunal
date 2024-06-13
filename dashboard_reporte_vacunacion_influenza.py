@@ -8,7 +8,7 @@ import plotly.express as px
 # Función para leer el último archivo creado con el nombre Reporte_vacunas_privadas en la carpeta "Reporte"
 def leer_ultimo_reporte_vacunas_privadas(directorio):
     # Buscar todos los archivos en el directorio que contengan "Reporte_vacunas_privadas"
-    archivos = [os.path.join(directorio, f) for f in os.listdir(directorio) if "Reporte_vacunas_privadas" in f and f.endswith(".csv")]
+    archivos = [os.path.join(directorio, f) for f in os.listdir(directorio) if "Reporte_vacunas" in f and f.endswith(".csv")]
     
     # Si no se encuentran archivos, devolver None
     if not archivos:
@@ -32,8 +32,8 @@ directorio_reporte = 'Reporte'
 
 # Leer el último reporte de vacunas privadas
 ultimo_reporte, fecha_creacion = leer_ultimo_reporte_vacunas_privadas(directorio_reporte)
-ultimo_reporte = ultimo_reporte.loc[~(ultimo_reporte['Nombre Dependencia Jerárquica'] == 'SEREMI Metropolitana de Santiago')]
-ultimo_reporte = ultimo_reporte.loc[~(ultimo_reporte['Nombre Dependencia Jerárquica'] == 'Ministerio de Salud')]
+ultimo_reporte = ultimo_reporte.loc[~(ultimo_reporte['SERVICIO'] == 'SEREMI Metropolitana de Santiago')]
+ultimo_reporte = ultimo_reporte.loc[~(ultimo_reporte['SERVICIO'] == 'Ministerio de Salud')]
 
 # Mostrar el DataFrame en Streamlit si se encuentra un archivo
 if ultimo_reporte is not None:
