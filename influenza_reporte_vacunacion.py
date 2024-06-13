@@ -53,6 +53,7 @@ cols=[
     'COMUNA_OCURR', # identificar la comuna
     'ESTABLECIMIENTO', # Identificacion del vacunatorio
     'CODIGO_DEIS', # Para cruzar con Establecimientos DEIS MINSAL
+    'SERVICIO', # Si es de SS respectivo o SEREMI 
     'LOTE', # Identificar lote Ministerial
     'FECHA_INMUNIZACION', # Se utiliza para establecer tiempos
     'DOSIS', # Filtro 'DOSIS' != 'EPRO'
@@ -99,7 +100,7 @@ df_vac_rm_filter_lote_minist['Nombre Dependencia Jerárquica'] = df_vac_rm_filte
 
 # Identificar los establecimientos sin dependencia jerárquica
 establecimientos_sin_dependencia = df_vac_rm_filter_lote_minist[df_vac_rm_filter_lote_minist['Nombre Dependencia Jerárquica'].isna()]
-
+#%%
 # %%
 # Aplicar la función para los últimos 3, 7 y 14 días
 df_vac_rm_filter_lote_minist = agregar_vacunacion_dias(df_vac_rm_filter_lote_minist, 3)
@@ -108,7 +109,7 @@ df_vac_rm_filter_lote_minist = agregar_vacunacion_dias(df_vac_rm_filter_lote_min
 
 #%%
 # Agrupar y sumar las vacunaciones por comuna y establecimiento
-reporte_minist = df_vac_rm_filter_lote_minist.groupby(['Nombre Dependencia Jerárquica','COMUNA_OCURR', 'ESTABLECIMIENTO']).agg(
+reporte_minist = df_vac_rm_filter_lote_minist.groupby(['SERVICIO','COMUNA_OCURR', 'ESTABLECIMIENTO']).agg(
     vacunacion_ultimos_3_dias=('vacunacion_ultimos_3_dias', 'sum'),
     vacunacion_ultimos_7_dias=('vacunacion_ultimos_7_dias', 'sum'),
     vacunacion_ultimos_14_dias=('vacunacion_ultimos_14_dias', 'sum')
