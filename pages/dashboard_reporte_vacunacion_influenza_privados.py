@@ -97,9 +97,9 @@ if ultimo_reporte is not None:
     fig_mediana = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['mediana_por_dia_3', 'mediana_por_dia_7', 'mediana_por_dia_14'], barmode='group', title="Mediana de Vacunaciones por Día y por Comuna")
     st.plotly_chart(fig_mediana)
 
-    st.subheader("Media de Vacunaciones por Día y por Comuna")
-    st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'media_por_dia_3', 'media_por_dia_7', 'media_por_dia_14']])
-    fig_media = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['media_por_dia_3', 'media_por_dia_7', 'media_por_dia_14'], barmode='group', title="Media de Vacunaciones por Día y por Comuna")
-    st.plotly_chart(fig_media)
+    # st.subheader("Media de Vacunaciones por Día y por Comuna")
+    # st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'media_por_dia_3', 'media_por_dia_7', 'media_por_dia_14']])
+    # fig_media = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['media_por_dia_3', 'media_por_dia_7', 'media_por_dia_14'], barmode='group', title="Media de Vacunaciones por Día y por Comuna")
+    # st.plotly_chart(fig_media)
 else:
     st.write("No se encontró ningún reporte de vacunas privadas.")

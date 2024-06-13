@@ -5,9 +5,9 @@ import os
 from datetime import datetime
 import plotly.express as px
 
-# Función para leer el último archivo creado con el nombre Reporte_vacunas_privadas en la carpeta "Reporte"
-def leer_ultimo_reporte_vacunas_privadas(directorio):
-    # Buscar todos los archivos en el directorio que contengan "Reporte_vacunas_privadas"
+# Función para leer el último archivo creado con el nombre Reporte_vacunas en la carpeta "Reporte"
+def leer_ultimo_Reporte_vacunas(directorio):
+    # Buscar todos los archivos en el directorio que contengan "Reporte_vacunas"
     archivos = [os.path.join(directorio, f) for f in os.listdir(directorio) if "Reporte_vacunas" in f and f.endswith(".csv")]
     
     # Si no se encuentran archivos, devolver None
@@ -30,15 +30,15 @@ def leer_ultimo_reporte_vacunas_privadas(directorio):
 # Directorio de los reportes
 directorio_reporte = 'Reporte'
 
-# Leer el último reporte de vacunas privadas
-ultimo_reporte, fecha_creacion = leer_ultimo_reporte_vacunas_privadas(directorio_reporte)
+# Leer el último reporte de vacunas publica
+ultimo_reporte, fecha_creacion = leer_ultimo_Reporte_vacunas(directorio_reporte)
 ultimo_reporte = ultimo_reporte.loc[~(ultimo_reporte['SERVICIO'] == 'SEREMI Metropolitana de Santiago')]
 ultimo_reporte = ultimo_reporte.loc[~(ultimo_reporte['SERVICIO'] == 'Ministerio de Salud')]
 
 # Mostrar el DataFrame en Streamlit si se encuentra un archivo
 if ultimo_reporte is not None:
-    st.title("Reporte de Vacunaciones Privadas")
-    st.write(f"Último Reporte de Vacunas Privadas (Creado el {fecha_creacion.strftime('%Y-%m-%d')}):")
+    st.title("Reporte de Vacunaciones publica")
+    st.write(f"Último Reporte de Vacunas publica (Creado el {fecha_creacion.strftime('%Y-%m-%d')}):")
     st.write("Nota: El separador de miles es ',' y el separador decimal es '.'. Este reporte fue generado por el Subdepartamento de gestión de la información y estadística de la Seremi de Salud de la Región Metropolitana.")
     
     # Seleccionar comunas
@@ -89,9 +89,9 @@ if ultimo_reporte is not None:
     fig_mediana = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['mediana_por_dia_3', 'mediana_por_dia_7', 'mediana_por_dia_14'], barmode='group', title="Mediana de Vacunaciones por Día y por Comuna")
     st.plotly_chart(fig_mediana)
 
-    st.subheader("Media de Vacunaciones por Día y por Comuna")
-    st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'media_por_dia_3', 'media_por_dia_7', 'media_por_dia_14']])
-    fig_media = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['media_por_dia_3', 'media_por_dia_7', 'media_por_dia_14'], barmode='group', title="Media de Vacunaciones por Día y por Comuna")
-    st.plotly_chart(fig_media)
+    # st.subheader("Media de Vacunaciones por Día y por Comuna")
+    # st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'media_por_dia_3', 'media_por_dia_7', 'media_por_dia_14']])
+    # fig_media = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['media_por_dia_3', 'media_por_dia_7', 'media_por_dia_14'], barmode='group', title="Media de Vacunaciones por Día y por Comuna")
+    # st.plotly_chart(fig_media)
 else:
-    st.write("No se encontró ningún reporte de vacunas privadas.")
+    st.write("No se encontró ningún reporte de vacunas publica.")
