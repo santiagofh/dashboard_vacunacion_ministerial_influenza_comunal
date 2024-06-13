@@ -21,7 +21,7 @@ def tipo_lote(df):
 ## Función para agregar columnas de vacunación en los últimos días
 def agregar_vacunacion_dias(df, dias):
     hoy = datetime.today()
-    rango_fecha_inicio = hoy - timedelta(days=dias)
+    rango_fecha_inicio = hoy - timedelta(days=dias+1)
     columna_nombre = f'vacunacion_ultimos_{dias}_dias'
     df[columna_nombre] = df['FECHA_INMUNIZACION'].apply(
         lambda x: 1 if rango_fecha_inicio <= datetime.strptime(x, '%Y-%m-%d') <= hoy else 0
@@ -51,7 +51,8 @@ cols=[
     'ID_INMUNIZACION', # ID unico
     'COD_REGION', # 'COD_REGION' == '13'
     'COMUNA_OCURR', # identificar la comuna
-    'CODIGO_DEIS', 'ESTABLECIMIENTO', # Identificacion del vacunatorio
+    'ESTABLECIMIENTO', # Identificacion del vacunatorio
+    'CODIGO_DEIS', # Para cruzar con Establecimientos DEIS MINSAL
     'LOTE', # Identificar lote Ministerial
     'FECHA_INMUNIZACION', # Se utiliza para establecer tiempos
     'DOSIS', # Filtro 'DOSIS' != 'EPRO'
@@ -68,14 +69,37 @@ for archivo in lista_archivos_influ:
     df['source'] = archivo
     lista_df.append(df)
 df_vac = pd.concat(lista_df)
+#%%
+# Filtros
 ## Aplicar filtros
 df_vac_rm=df_vac.loc[df_vac.COD_REGION==13]
 df_vac_rm_filter=rni_filtros(df_vac_rm)
 df_vac_rm_filter_lote=tipo_lote(df_vac_rm_filter)
-#%%
-# Informe
-## Filtrar por lote ministerial
 df_vac_rm_filter_lote_minist=df_vac_rm_filter_lote.loc[df_vac_rm_filter_lote.TIPO_LOTE=='Ministerial']
+#%%
+# Leer el archivo de establecimientos DEIS
+df_deis = pd.read_excel("Establecimientos DEIS MINSAL 28-05-2024 (1) (1).xlsx", skiprows=1)
+df_deis_dep = df_deis[['Código Vigente', 'Código Antiguo ', 'Nombre Dependencia Jerárquica (SEREMI / Servicio de Salud)']]
+
+# Convertir los códigos a string
+df_deis_dep['Código Vigente'] = df_deis_dep['Código Vigente'].astype('str')
+df_deis_dep['Código Antiguo '] = df_deis_dep['Código Antiguo '].astype('str')
+
+# Crear el diccionario con código vigente y nombre de dependencia
+diccionario_dependencias = pd.Series(df_deis_dep['Nombre Dependencia Jerárquica (SEREMI / Servicio de Salud)'].values, index=df_deis_dep['Código Vigente']).to_dict()
+
+# Agregar código antiguo al diccionario
+diccionario_dependencias.update(pd.Series(df_deis_dep['Nombre Dependencia Jerárquica (SEREMI / Servicio de Salud)'].values, index=df_deis_dep['Código Antiguo ']).to_dict())
+diccionario_dependencias.update({'09-407':'Servicio de Salud'})
+# Convertir CODIGO_DEIS a string
+df_vac_rm_filter_lote_minist['CODIGO_DEIS'] = df_vac_rm_filter_lote_minist['CODIGO_DEIS'].astype('str')
+
+# Hacer un map en CODIGO_DEIS utilizando el diccionario
+df_vac_rm_filter_lote_minist['Nombre Dependencia Jerárquica'] = df_vac_rm_filter_lote_minist['CODIGO_DEIS'].map(diccionario_dependencias)
+
+# Identificar los establecimientos sin dependencia jerárquica
+establecimientos_sin_dependencia = df_vac_rm_filter_lote_minist[df_vac_rm_filter_lote_minist['Nombre Dependencia Jerárquica'].isna()]
+
 # %%
 # Aplicar la función para los últimos 3, 7 y 14 días
 df_vac_rm_filter_lote_minist = agregar_vacunacion_dias(df_vac_rm_filter_lote_minist, 3)
@@ -84,7 +108,7 @@ df_vac_rm_filter_lote_minist = agregar_vacunacion_dias(df_vac_rm_filter_lote_min
 
 #%%
 # Agrupar y sumar las vacunaciones por comuna y establecimiento
-reporte_minist = df_vac_rm_filter_lote_minist.groupby(['COMUNA_OCURR', 'ESTABLECIMIENTO']).agg(
+reporte_minist = df_vac_rm_filter_lote_minist.groupby(['Nombre Dependencia Jerárquica','COMUNA_OCURR', 'ESTABLECIMIENTO']).agg(
     vacunacion_ultimos_3_dias=('vacunacion_ultimos_3_dias', 'sum'),
     vacunacion_ultimos_7_dias=('vacunacion_ultimos_7_dias', 'sum'),
     vacunacion_ultimos_14_dias=('vacunacion_ultimos_14_dias', 'sum')
@@ -99,30 +123,3 @@ hoy = datetime.today()
 hoy_str = hoy.strftime('%Y%m%d')
 nombre_archivo_minist = f'{hoy_str}_Reporte_vacunas_ministeriales.csv'
 reporte_minist.to_csv(f'Reporte/{nombre_archivo_minist}', index=False)
-
-#%%
-# Informe para vacunas privadas
-## Filtrar por lote privado
-df_vac_rm_filter_lote_priv=df_vac_rm_filter_lote.loc[df_vac_rm_filter_lote.TIPO_LOTE=='Privado']
-# %%
-# Aplicar la función para los últimos 3, 7 y 14 días
-df_vac_rm_filter_lote_priv = agregar_vacunacion_dias(df_vac_rm_filter_lote_priv, 3)
-df_vac_rm_filter_lote_priv = agregar_vacunacion_dias(df_vac_rm_filter_lote_priv, 7)
-df_vac_rm_filter_lote_priv = agregar_vacunacion_dias(df_vac_rm_filter_lote_priv, 14)
-
-#%%
-# Agrupar y sumar las vacunaciones por comuna y establecimiento
-reporte_priv = df_vac_rm_filter_lote_priv.groupby(['COMUNA_OCURR', 'ESTABLECIMIENTO']).agg(
-    vacunacion_ultimos_3_dias=('vacunacion_ultimos_3_dias', 'sum'),
-    vacunacion_ultimos_7_dias=('vacunacion_ultimos_7_dias', 'sum'),
-    vacunacion_ultimos_14_dias=('vacunacion_ultimos_14_dias', 'sum')
-).reset_index()
-
-#%%
-# Mostrar el reporte privado
-print(reporte_priv)
-
-#%%
-nombre_archivo_priv = f'{hoy_str}_Reporte_vacunas_privadas.csv'
-reporte_priv.to_csv(f'Reporte/{nombre_archivo_priv}', index=False)
-# %%

@@ -35,7 +35,7 @@ directorio_reporte = 'Reporte'
 
 # Leer el último reporte de vacunas privadas`
 ultimo_reporte, fecha_creacion = leer_ultimo_reporte_vacunas_privadas(directorio_reporte)
-
+ultimo_reporte=ultimo_reporte.loc[~(ultimo_reporte['Nombre Dependencia Jerárquica']=='SEREMI Metropolitana de Santiago')]
 # Mostrar el DataFrame en Streamlit si se encuentra un archivo
 if ultimo_reporte is not None:
     st.title("Reporte de Vacunaciones Privadas")
