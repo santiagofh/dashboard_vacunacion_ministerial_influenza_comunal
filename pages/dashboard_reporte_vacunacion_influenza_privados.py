@@ -54,8 +54,8 @@ if ultimo_reporte is not None:
     
     st.dataframe(reporte_filtrado.reset_index(drop=True))
 
-    # Agrupar por comuna y sumar las vacunaciones
-    suma_por_comuna = reporte_filtrado.groupby(['COMUNA_OCURR','ESTABLECIMIENTO']).agg(
+    # Agrupar por comuna y establecimiento y sumar las vacunaciones
+    suma_por_comuna = reporte_filtrado.groupby(['COMUNA_OCURR']).agg(
         vacunacion_ultimos_3_dias=('vacunacion_ultimos_3_dias', 'sum'),
         vacunacion_ultimos_7_dias=('vacunacion_ultimos_7_dias', 'sum'),
         vacunacion_ultimos_14_dias=('vacunacion_ultimos_14_dias', 'sum')
@@ -66,13 +66,20 @@ if ultimo_reporte is not None:
     suma_por_comuna['promedio_por_dia_7'] = suma_por_comuna['vacunacion_ultimos_7_dias'] / 7
     suma_por_comuna['promedio_por_dia_14'] = suma_por_comuna['vacunacion_ultimos_14_dias'] / 14
 
-    suma_por_comuna['mediana_por_dia_3'] = reporte_filtrado.groupby(['COMUNA_OCURR','ESTABLECIMIENTO'])['vacunacion_ultimos_3_dias'].median() / 3
-    suma_por_comuna['mediana_por_dia_7'] = reporte_filtrado.groupby(['COMUNA_OCURR','ESTABLECIMIENTO'])['vacunacion_ultimos_7_dias'].median() / 7
-    suma_por_comuna['mediana_por_dia_14'] = reporte_filtrado.groupby(['COMUNA_OCURR','ESTABLECIMIENTO'])['vacunacion_ultimos_14_dias'].median() / 14
+    medianas = reporte_filtrado.groupby('COMUNA_OCURR').agg(
+        mediana_por_dia_3=('vacunacion_ultimos_3_dias', 'median'),
+        mediana_por_dia_7=('vacunacion_ultimos_7_dias', 'median'),
+        mediana_por_dia_14=('vacunacion_ultimos_14_dias', 'median')
+    ).reset_index()
 
-    suma_por_comuna['media_por_dia_3'] = reporte_filtrado.groupby(['COMUNA_OCURR','ESTABLECIMIENTO'])['vacunacion_ultimos_3_dias'].mean() / 3
-    suma_por_comuna['media_por_dia_7'] = reporte_filtrado.groupby(['COMUNA_OCURR','ESTABLECIMIENTO'])['vacunacion_ultimos_7_dias'].mean() / 7
-    suma_por_comuna['media_por_dia_14'] = reporte_filtrado.groupby(['COMUNA_OCURR','ESTABLECIMIENTO'])['vacunacion_ultimos_14_dias'].mean() / 14
+    medias = reporte_filtrado.groupby('COMUNA_OCURR').agg(
+        media_por_dia_3=('vacunacion_ultimos_3_dias', 'mean'),
+        media_por_dia_7=('vacunacion_ultimos_7_dias', 'mean'),
+        media_por_dia_14=('vacunacion_ultimos_14_dias', 'mean')
+    ).reset_index()
+
+    suma_por_comuna = suma_por_comuna.merge(medianas, on='COMUNA_OCURR')
+    suma_por_comuna = suma_por_comuna.merge(medias, on='COMUNA_OCURR')
 
     # Mostrar DataFrames y gráficos
     st.subheader("Suma de Vacunaciones por Comuna")
