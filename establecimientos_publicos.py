@@ -3,7 +3,6 @@ import streamlit as st
 import pandas as pd
 import os
 from datetime import datetime
-import plotly.express as px
 
 # Función para leer el último archivo creado con el nombre Reporte_vacunas en la carpeta "Reporte"
 def leer_ultimo_Reporte_vacunas(directorio):
@@ -37,12 +36,12 @@ ultimo_reporte = ultimo_reporte.loc[~(ultimo_reporte['SERVICIO'] == 'Ministerio 
 
 # Mostrar el DataFrame en Streamlit si se encuentra un archivo
 if ultimo_reporte is not None:
-    st.title("Reporte de Vacunaciones publica")
-    st.write(f"Último Reporte de Vacunas publica (Creado el {fecha_creacion.strftime('%Y-%m-%d')}):")
-    st.write("Nota: El separador de miles es ',' y el separador decimal es '.'. Este reporte fue generado por el Subdepartamento de gestión de la información y estadística de la Seremi de Salud de la Región Metropolitana.")
+    st.title("Reporte de Vacunaciones pública")
+    st.write(f"Último Reporte de Vacunas pública (Creado el {fecha_creacion.strftime('%Y-%m-%d')}):")
+    st.write("Nota: El separador de miles es '.' y el separador decimal es ','. Este reporte fue generado por el Subdepartamento de gestión de la información y estadística de la Seremi de Salud de la Región Metropolitana.")
     
     # Seleccionar comunas
-    todas_comunas = ["Todas las comunas"] + list(ultimo_reporte['COMUNA_OCURR'].unique())
+    todas_comunas = ["Todas las comunas"] + sorted(list(ultimo_reporte['COMUNA_OCURR'].unique()))
     comunas_seleccionadas = st.multiselect("Seleccione las comunas para mostrar:", options=todas_comunas, default="Todas las comunas")
     
     # Filtrar el DataFrame según las comunas seleccionadas
@@ -51,6 +50,9 @@ if ultimo_reporte is not None:
     else:
         reporte_filtrado = ultimo_reporte[ultimo_reporte['COMUNA_OCURR'].isin(comunas_seleccionadas)]
     
+    # Formatear los números
+    reporte_filtrado = reporte_filtrado.applymap(lambda x: f"{x:,.1f}".replace(",", "X").replace(".", ",").replace("X", "."))
+
     st.dataframe(reporte_filtrado.reset_index(drop=True))
 
     # Agrupar por comuna y sumar las vacunaciones
@@ -60,38 +62,18 @@ if ultimo_reporte is not None:
         vacunacion_ultimos_14_dias=('vacunacion_ultimos_14_dias', 'sum')
     ).reset_index()
 
-    # Calcular los promedios, medianas y medias por día
+    # Calcular los promedios por día
     suma_por_comuna['promedio_por_dia_3'] = suma_por_comuna['vacunacion_ultimos_3_dias'] / 3
     suma_por_comuna['promedio_por_dia_7'] = suma_por_comuna['vacunacion_ultimos_7_dias'] / 7
     suma_por_comuna['promedio_por_dia_14'] = suma_por_comuna['vacunacion_ultimos_14_dias'] / 14
 
-    # suma_por_comuna['mediana_por_dia_3'] = reporte_filtrado.groupby('COMUNA_OCURR')['vacunacion_ultimos_3_dias'].median() / 3
-    # suma_por_comuna['mediana_por_dia_7'] = reporte_filtrado.groupby('COMUNA_OCURR')['vacunacion_ultimos_7_dias'].median() / 7
-    # suma_por_comuna['mediana_por_dia_14'] = reporte_filtrado.groupby('COMUNA_OCURR')['vacunacion_ultimos_14_dias'].median() / 14
+    # Formatear los números
+    suma_por_comuna = suma_por_comuna.applymap(lambda x: f"{x:,.1f}".replace(",", "X").replace(".", ",").replace("X", "."))
 
-    # suma_por_comuna['media_por_dia_3'] = reporte_filtrado.groupby('COMUNA_OCURR')['vacunacion_ultimos_3_dias'].mean() / 3
-    # suma_por_comuna['media_por_dia_7'] = reporte_filtrado.groupby('COMUNA_OCURR')['vacunacion_ultimos_7_dias'].mean() / 7
-    # suma_por_comuna['media_por_dia_14'] = reporte_filtrado.groupby('COMUNA_OCURR')['vacunacion_ultimos_14_dias'].mean() / 14
-
-    # Mostrar DataFrames y gráficos
     st.subheader("Suma de Vacunaciones por Comuna")
     st.dataframe(suma_por_comuna)
-    fig_suma = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['vacunacion_ultimos_3_dias', 'vacunacion_ultimos_7_dias', 'vacunacion_ultimos_14_dias'], barmode='group', title="Suma de Vacunaciones por Comuna")
-    st.plotly_chart(fig_suma)
 
     st.subheader("Promedio de Vacunaciones por Día y por Comuna")
     st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'promedio_por_dia_3', 'promedio_por_dia_7', 'promedio_por_dia_14']])
-    fig_promedio = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['promedio_por_dia_3', 'promedio_por_dia_7', 'promedio_por_dia_14'], barmode='group', title="Promedio de Vacunaciones por Día y por Comuna")
-    st.plotly_chart(fig_promedio)
-
-    # st.subheader("Mediana de Vacunaciones por Día y por Comuna")
-    # st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'mediana_por_dia_3', 'mediana_por_dia_7', 'mediana_por_dia_14']])
-    # fig_mediana = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['mediana_por_dia_3', 'mediana_por_dia_7', 'mediana_por_dia_14'], barmode='group', title="Mediana de Vacunaciones por Día y por Comuna")
-    # st.plotly_chart(fig_mediana)
-
-    # st.subheader("Media de Vacunaciones por Día y por Comuna")
-    # st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'media_por_dia_3', 'media_por_dia_7', 'media_por_dia_14']])
-    # fig_media = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['media_por_dia_3', 'media_por_dia_7', 'media_por_dia_14'], barmode='group', title="Media de Vacunaciones por Día y por Comuna")
-    # st.plotly_chart(fig_media)
 else:
-    st.write("No se encontró ningún reporte de vacunas publica.")
+    st.write("No se encontró ningún reporte de vacunas pública.")
