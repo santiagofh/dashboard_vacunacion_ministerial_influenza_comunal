@@ -57,10 +57,13 @@ if ultimo_reporte is not None and 'SERVICIO' in ultimo_reporte.columns and 'COMU
         reporte_filtrado[col] = pd.to_numeric(reporte_filtrado[col], errors='coerce')
 
     # Formatear solo las columnas numéricas
-    for col in columnas_numericas:
-        reporte_filtrado[col] = reporte_filtrado[col].apply(lambda x: f"{x:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".") if pd.notnull(x) else x)
+    reporte_filtrado_styled = reporte_filtrado.style.format(
+        {col: '{:,.1f}' for col in columnas_numericas},
+        thousands='.',
+        decimal=','
+    )
 
-    st.dataframe(reporte_filtrado.reset_index(drop=True))
+    st.dataframe(reporte_filtrado_styled)
 
     # Agrupar por comuna y sumar las vacunaciones
     suma_por_comuna = reporte_filtrado.groupby('COMUNA_OCURR').agg(
@@ -76,13 +79,16 @@ if ultimo_reporte is not None and 'SERVICIO' in ultimo_reporte.columns and 'COMU
 
     # Formatear solo las columnas numéricas
     columnas_numericas_suma = ['vacunacion_ultimos_3_dias', 'vacunacion_ultimos_7_dias', 'vacunacion_ultimos_14_dias', 'promedio_por_dia_3', 'promedio_por_dia_7', 'promedio_por_dia_14']
-    for col in columnas_numericas_suma:
-        suma_por_comuna[col] = suma_por_comuna[col].apply(lambda x: f"{x:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".") if pd.notnull(x) else x)
+    suma_por_comuna_styled = suma_por_comuna.style.format(
+        {col: '{:,.1f}' for col in columnas_numericas_suma},
+        thousands='.',
+        decimal=','
+    )
 
     st.subheader("Suma de Vacunaciones por Comuna")
-    st.dataframe(suma_por_comuna)
+    st.dataframe(suma_por_comuna_styled)
 
     st.subheader("Promedio de Vacunaciones por Día y por Comuna")
-    st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'promedio_por_dia_3', 'promedio_por_dia_7', 'promedio_por_dia_14']])
+    st.dataframe(suma_por_comuna_styled[['COMUNA_OCURR', 'promedio_por_dia_3', 'promedio_por_dia_7', 'promedio_por_dia_14']])
 else:
     st.write("No se encontró ningún reporte de vacunas pública o faltan columnas necesarias en el archivo.")
