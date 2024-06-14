@@ -55,7 +55,7 @@ if ultimo_reporte is not None:
     st.dataframe(reporte_filtrado.reset_index(drop=True))
 
     # Agrupar por comuna y establecimiento y sumar las vacunaciones
-    suma_por_comuna = reporte_filtrado.groupby(['COMUNA_OCURR']).agg(
+    suma_por_comuna = reporte_filtrado.groupby(['COMUNA_OCURR','ESTABLECIMIENTO']).agg(
         vacunacion_ultimos_3_dias=('vacunacion_ultimos_3_dias', 'sum'),
         vacunacion_ultimos_7_dias=('vacunacion_ultimos_7_dias', 'sum'),
         vacunacion_ultimos_14_dias=('vacunacion_ultimos_14_dias', 'sum')
@@ -66,20 +66,20 @@ if ultimo_reporte is not None:
     suma_por_comuna['promedio_por_dia_7'] = suma_por_comuna['vacunacion_ultimos_7_dias'] / 7
     suma_por_comuna['promedio_por_dia_14'] = suma_por_comuna['vacunacion_ultimos_14_dias'] / 14
 
-    medianas = reporte_filtrado.groupby('COMUNA_OCURR').agg(
-        mediana_por_dia_3=('vacunacion_ultimos_3_dias', 'median'),
-        mediana_por_dia_7=('vacunacion_ultimos_7_dias', 'median'),
-        mediana_por_dia_14=('vacunacion_ultimos_14_dias', 'median')
-    ).reset_index()
+    # medianas = reporte_filtrado.groupby('COMUNA_OCURR').agg(
+    #     mediana_por_dia_3=('vacunacion_ultimos_3_dias', 'median'),
+    #     mediana_por_dia_7=('vacunacion_ultimos_7_dias', 'median'),
+    #     mediana_por_dia_14=('vacunacion_ultimos_14_dias', 'median')
+    # ).reset_index()
 
-    medias = reporte_filtrado.groupby('COMUNA_OCURR').agg(
-        media_por_dia_3=('vacunacion_ultimos_3_dias', 'mean'),
-        media_por_dia_7=('vacunacion_ultimos_7_dias', 'mean'),
-        media_por_dia_14=('vacunacion_ultimos_14_dias', 'mean')
-    ).reset_index()
+    # medias = reporte_filtrado.groupby('COMUNA_OCURR').agg(
+    #     media_por_dia_3=('vacunacion_ultimos_3_dias', 'mean'),
+    #     media_por_dia_7=('vacunacion_ultimos_7_dias', 'mean'),
+    #     media_por_dia_14=('vacunacion_ultimos_14_dias', 'mean')
+    # ).reset_index()
 
-    suma_por_comuna = suma_por_comuna.merge(medianas, on='COMUNA_OCURR')
-    suma_por_comuna = suma_por_comuna.merge(medias, on='COMUNA_OCURR')
+    # suma_por_comuna = suma_por_comuna.merge(medianas, on='COMUNA_OCURR')
+    # suma_por_comuna = suma_por_comuna.merge(medias, on='COMUNA_OCURR')
 
     # Mostrar DataFrames y gráficos
     st.subheader("Suma de Vacunaciones por Comuna")
@@ -92,10 +92,10 @@ if ultimo_reporte is not None:
     fig_promedio = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['promedio_por_dia_3', 'promedio_por_dia_7', 'promedio_por_dia_14'], barmode='group', title="Promedio de Vacunaciones por Día y por Comuna")
     st.plotly_chart(fig_promedio)
 
-    st.subheader("Mediana de Vacunaciones por Día y por Comuna")
-    st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'mediana_por_dia_3', 'mediana_por_dia_7', 'mediana_por_dia_14']])
-    fig_mediana = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['mediana_por_dia_3', 'mediana_por_dia_7', 'mediana_por_dia_14'], barmode='group', title="Mediana de Vacunaciones por Día y por Comuna")
-    st.plotly_chart(fig_mediana)
+    # st.subheader("Mediana de Vacunaciones por Día y por Comuna")
+    # st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'mediana_por_dia_3', 'mediana_por_dia_7', 'mediana_por_dia_14']])
+    # fig_mediana = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['mediana_por_dia_3', 'mediana_por_dia_7', 'mediana_por_dia_14'], barmode='group', title="Mediana de Vacunaciones por Día y por Comuna")
+    # st.plotly_chart(fig_mediana)
 
     # st.subheader("Media de Vacunaciones por Día y por Comuna")
     # st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'media_por_dia_3', 'media_por_dia_7', 'media_por_dia_14']])
