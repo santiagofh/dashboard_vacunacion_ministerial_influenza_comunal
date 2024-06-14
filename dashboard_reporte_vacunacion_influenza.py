@@ -85,10 +85,8 @@ if ultimo_reporte is not None and 'SERVICIO' in ultimo_reporte.columns and 'COMU
         decimal=','
     )
 
-    st.subheader("Suma de Vacunaciones por Comuna")
+    st.subheader("Suma y Promedio de Vacunaciones por Comuna")
     st.dataframe(suma_por_comuna_styled)
 
-    st.subheader("Promedio de Vacunaciones por Día y por Comuna")
-    st.dataframe(suma_por_comuna_styled[['COMUNA_OCURR', 'promedio_por_dia_3', 'promedio_por_dia_7', 'promedio_por_dia_14']])
 else:
     st.write("No se encontró ningún reporte de vacunas pública o faltan columnas necesarias en el archivo.")

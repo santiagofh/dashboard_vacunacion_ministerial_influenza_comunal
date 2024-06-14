@@ -1,3 +1,4 @@
+
 # Importar librerías
 import streamlit as st
 import pandas as pd
@@ -35,10 +36,9 @@ ultimo_reporte, fecha_creacion = leer_ultimo_Reporte_vacunas(directorio_reporte)
 # Verificar si las columnas 'SERVICIO' y 'COMUNA_OCURR' existen en el DataFrame
 if ultimo_reporte is not None and 'SERVICIO' in ultimo_reporte.columns and 'COMUNA_OCURR' in ultimo_reporte.columns:
     ultimo_reporte = ultimo_reporte.loc[(ultimo_reporte['SERVICIO'] == 'SEREMI Metropolitana de Santiago')
-                                        |
-                                        (ultimo_reporte['SERVICIO'] == 'Ministerio de Salud')]
-
-    st.title("Reporte de Vacunaciones: Establecimientos Privados")
+                                            |
+                                            (ultimo_reporte['SERVICIO'] == 'Ministerio de Salud')]
+    st.title("Reporte de Vacunaciones: Establecimientos Públicos")
     st.write(f"Último Reporte de Vacunas pública (Creado el {fecha_creacion.strftime('%Y-%m-%d')}):")
     st.write("Nota: El separador de miles es '.' y el separador decimal es ','. Este reporte fue generado por el Subdepartamento de gestión de la información y estadística de la Seremi de Salud de la Región Metropolitana.")
     
@@ -57,10 +57,17 @@ if ultimo_reporte is not None and 'SERVICIO' in ultimo_reporte.columns and 'COMU
     for col in columnas_numericas:
         reporte_filtrado[col] = pd.to_numeric(reporte_filtrado[col], errors='coerce')
 
-    st.dataframe(reporte_filtrado.reset_index(drop=True))
+    # Formatear solo las columnas numéricas
+    reporte_filtrado_styled = reporte_filtrado.style.format(
+        {col: '{:,.1f}' for col in columnas_numericas},
+        thousands='.',
+        decimal=','
+    )
+
+    st.dataframe(reporte_filtrado_styled)
 
     # Agrupar por comuna y sumar las vacunaciones
-    suma_por_comuna = reporte_filtrado.groupby('COMUNA_OCURR').agg(
+    suma_por_comuna = reporte_filtrado.groupby(['ESTABLECIMIENTO','COMUNA_OCURR']).agg(
         vacunacion_ultimos_3_dias=('vacunacion_ultimos_3_dias', 'sum'),
         vacunacion_ultimos_7_dias=('vacunacion_ultimos_7_dias', 'sum'),
         vacunacion_ultimos_14_dias=('vacunacion_ultimos_14_dias', 'sum')
@@ -73,13 +80,14 @@ if ultimo_reporte is not None and 'SERVICIO' in ultimo_reporte.columns and 'COMU
 
     # Formatear solo las columnas numéricas
     columnas_numericas_suma = ['vacunacion_ultimos_3_dias', 'vacunacion_ultimos_7_dias', 'vacunacion_ultimos_14_dias', 'promedio_por_dia_3', 'promedio_por_dia_7', 'promedio_por_dia_14']
-    for col in columnas_numericas_suma:
-        suma_por_comuna[col] = suma_por_comuna[col].apply(lambda x: f"{x:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".") if pd.notnull(x) else x)
+    suma_por_comuna_styled = suma_por_comuna.style.format(
+        {col: '{:,.1f}' for col in columnas_numericas_suma},
+        thousands='.',
+        decimal=','
+    )
 
-    st.subheader("Suma de Vacunaciones por Comuna y Establecimiento")
-    st.dataframe(suma_por_comuna)
+    st.subheader("Suma y Promedio de Vacunaciones por Comuna")
+    st.dataframe(suma_por_comuna_styled)
 
-    st.subheader("Promedio de Vacunaciones por Día y por Comuna y Establecimiento")
-    st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'promedio_por_dia_3', 'promedio_por_dia_7', 'promedio_por_dia_14']])
 else:
     st.write("No se encontró ningún reporte de vacunas pública o faltan columnas necesarias en el archivo.")
