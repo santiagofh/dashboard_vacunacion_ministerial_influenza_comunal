@@ -37,7 +37,7 @@ if ultimo_reporte is not None and 'SERVICIO' in ultimo_reporte.columns and 'COMU
     ultimo_reporte = ultimo_reporte.loc[~(ultimo_reporte['SERVICIO'] == 'SEREMI Metropolitana de Santiago')]
     ultimo_reporte = ultimo_reporte.loc[~(ultimo_reporte['SERVICIO'] == 'Ministerio de Salud')]
 
-    st.title("Reporte de Vacunaciones pública")
+    st.title("Reporte de Vacunaciones: Establecimientos Públicos")
     st.write(f"Último Reporte de Vacunas pública (Creado el {fecha_creacion.strftime('%Y-%m-%d')}):")
     st.write("Nota: El separador de miles es '.' y el separador decimal es ','. Este reporte fue generado por el Subdepartamento de gestión de la información y estadística de la Seremi de Salud de la Región Metropolitana.")
     
