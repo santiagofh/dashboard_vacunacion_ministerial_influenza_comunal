@@ -38,9 +38,10 @@ if ultimo_reporte is not None and 'SERVICIO' in ultimo_reporte.columns and 'COMU
     ultimo_reporte = ultimo_reporte.loc[(ultimo_reporte['SERVICIO'] == 'SEREMI Metropolitana de Santiago')
                                             |
                                             (ultimo_reporte['SERVICIO'] == 'Ministerio de Salud')]
-    st.title("Reporte de Vacunaciones: Establecimientos Públicos")
+    st.title("Reporte de Vacunaciones: Establecimientos Privados")
     st.write(f"Último Reporte de Vacunas pública (Creado el {fecha_creacion.strftime('%Y-%m-%d')}):")
-    st.write("Nota: El separador de miles es '.' y el separador decimal es ','. Este reporte fue generado por el Subdepartamento de gestión de la información y estadística de la Seremi de Salud de la Región Metropolitana.")
+    st.write("Nota: El separador de miles es '.' y el separador decimal es ','.")
+    st.write("Este reporte fue generado por el Subdepartamento de gestión de la información y estadística de la Seremi de Salud de la Región Metropolitana.")
     
     # Seleccionar comunas
     todas_comunas = ["Todas las comunas"] + sorted(list(ultimo_reporte['COMUNA_OCURR'].unique()))
@@ -67,7 +68,7 @@ if ultimo_reporte is not None and 'SERVICIO' in ultimo_reporte.columns and 'COMU
     st.dataframe(reporte_filtrado_styled)
 
     # Agrupar por comuna y sumar las vacunaciones
-    suma_por_comuna = reporte_filtrado.groupby(['ESTABLECIMIENTO','COMUNA_OCURR']).agg(
+    suma_por_comuna = reporte_filtrado.groupby(['COMUNA_OCURR','ESTABLECIMIENTO']).agg(
         vacunacion_ultimos_3_dias=('vacunacion_ultimos_3_dias', 'sum'),
         vacunacion_ultimos_7_dias=('vacunacion_ultimos_7_dias', 'sum'),
         vacunacion_ultimos_14_dias=('vacunacion_ultimos_14_dias', 'sum')
@@ -86,7 +87,7 @@ if ultimo_reporte is not None and 'SERVICIO' in ultimo_reporte.columns and 'COMU
         decimal=','
     )
 
-    st.subheader("Suma y Promedio de Vacunaciones por Comuna")
+    st.subheader("Suma y Promedio de Vacunaciones por Comuna y Establecimiento")
     st.dataframe(suma_por_comuna_styled)
 
 else:
