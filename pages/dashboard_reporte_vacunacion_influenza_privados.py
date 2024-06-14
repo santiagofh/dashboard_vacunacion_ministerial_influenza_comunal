@@ -88,9 +88,9 @@ if ultimo_reporte is not None:
     st.plotly_chart(fig_suma)
 
     st.subheader("Promedio de Vacunaciones por Día y por Comuna")
-    st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'promedio_por_dia_3', 'promedio_por_dia_7', 'promedio_por_dia_14']])
-    fig_promedio = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['promedio_por_dia_3', 'promedio_por_dia_7', 'promedio_por_dia_14'], barmode='group', title="Promedio de Vacunaciones por Día y por Comuna")
-    st.plotly_chart(fig_promedio)
+    st.dataframe(suma_por_comuna[['COMUNA_OCURR','ESTABLECIMIENTO', 'promedio_por_dia_3', 'promedio_por_dia_7', 'promedio_por_dia_14']])
+    # fig_promedio = px.bar(suma_por_comuna, x='COMUNA_OCURR', y=['promedio_por_dia_3', 'promedio_por_dia_7', 'promedio_por_dia_14'], barmode='group', title="Promedio de Vacunaciones por Día y por Comuna")
+    # st.plotly_chart(fig_promedio)
 
     # st.subheader("Mediana de Vacunaciones por Día y por Comuna")
     # st.dataframe(suma_por_comuna[['COMUNA_OCURR', 'mediana_por_dia_3', 'mediana_por_dia_7', 'mediana_por_dia_14']])
