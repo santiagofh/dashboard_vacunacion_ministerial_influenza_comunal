@@ -56,6 +56,10 @@ if ultimo_reporte is not None and 'SERVICIO' in ultimo_reporte.columns and 'COMU
     for col in columnas_numericas:
         reporte_filtrado[col] = pd.to_numeric(reporte_filtrado[col], errors='coerce')
 
+    # Formatear solo las columnas numéricas
+    for col in columnas_numericas:
+        reporte_filtrado[col] = reporte_filtrado[col].apply(lambda x: f"{x:,.1f}".replace(",", "X").replace(".", ",").replace("X", ".") if pd.notnull(x) else x)
+
     st.dataframe(reporte_filtrado.reset_index(drop=True))
 
     # Agrupar por comuna y sumar las vacunaciones
