@@ -31,7 +31,7 @@ def agregar_vacunacion_dias(df, dias):
 # Lectura de columnas y de influenza
 
 ## Directorio raíz donde se encuentran los archivos CSV
-directorio_raiz_influ = r'C:\Users\fariass\OneDrive - SUBSECRETARIA DE SALUD PUBLICA\Escritorio\PNI\DATA\Influenza 2024'
+directorio_raiz_influ = r'C:\Users\fariass\OneDrive - SUBSECRETARIA DE SALUD PUBLICA\Escritorio\PNI\DATA\Influenza 2024\OCU'
 lista_archivos_influ = []
 
 ## Buscar archivos CSV en el directorio raíz y subdirectorios
