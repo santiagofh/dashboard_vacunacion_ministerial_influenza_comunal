@@ -42,8 +42,8 @@ for raiz, dirs, archivos in os.walk(directorio_raiz_influ):
             lista_archivos_influ.append(ruta_completa)
 
 ## Lectura de columnas de influenza
-path_file= r'C:\Users\fariass\OneDrive - SUBSECRETARIA DE SALUD PUBLICA\Escritorio\PNI\DATA\Influenza 2024\Influenza2024_0.csv'
-col=pd.read_csv(path_file,nrows=1,sep='|',encoding='LATIN1',low_memory=False).columns
+# path_file= r'C:\Users\fariass\OneDrive - SUBSECRETARIA DE SALUD PUBLICA\Escritorio\PNI\DATA\Influenza 2024\Influenza2024_0.csv'
+# col=pd.read_csv(path_file,nrows=1,sep='|',encoding='LATIN1',low_memory=False).columns
 #%%
 # Lectura de archivos y definicion de columnas a utilizar 
 ## Columnas a utilizar
