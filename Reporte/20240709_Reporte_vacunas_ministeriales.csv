@@ -1,0 +1,308 @@
+SERVICIO,COMUNA_OCURR,ESTABLECIMIENTO,vacunacion_ultimos_3_dias,vacunacion_ultimos_7_dias,vacunacion_ultimos_14_dias
+Ministerio de Salud,Santiago,Punto de vacunacion Minsal,0,0,0
+S.S. Metropolitano Central,Cerrillos,Centro de Salud Familiar Dr. Norman Voulliéme,68,205,383
+S.S. Metropolitano Central,Cerrillos,Centro de Salud Familiar Enfermera Sofía Pincheira,224,577,1373
+S.S. Metropolitano Central,Estación Central,Centro de Salud Familiar Las Mercedes,180,596,1252
+S.S. Metropolitano Central,Estación Central,Centro de Salud Familiar Padre Vicente Irarrázabal,67,575,1407
+S.S. Metropolitano Central,Estación Central,Centro de Salud Familiar San José de Chuchunco,9,208,495
+S.S. Metropolitano Central,Maipú,Centro de Salud Familiar Clotario Blest,7,76,136
+S.S. Metropolitano Central,Maipú,Centro de Salud Familiar Dr. Carlos Godoy,12,292,470
+S.S. Metropolitano Central,Maipú,Centro de Salud Familiar Dr. Iván Insunza,52,191,373
+S.S. Metropolitano Central,Maipú,Centro de Salud Familiar Dr. José Eduardo Ahués Salame,42,151,369
+S.S. Metropolitano Central,Maipú,Centro de Salud Familiar Dr. Luis Ferrada,5,46,159
+S.S. Metropolitano Central,Maipú,Centro de Salud Familiar Dra. Ana María Juricic,62,217,469
+S.S. Metropolitano Central,Maipú,Centro de Salud Familiar Maipú,27,229,552
+S.S. Metropolitano Central,Maipú,Centro de Salud Familiar Presidenta Michelle Bachelet,53,374,641
+S.S. Metropolitano Central,Maipú,Hospital Clínico Metropolitano El Carmen Doctor Luis Valentín Ferrada,3,12,19
+S.S. Metropolitano Central,Santiago,Centro de Salud Familiar Arauco,8,48,307
+S.S. Metropolitano Central,Santiago,Centro de Salud Familiar Ignacio Domeyko,37,174,613
+S.S. Metropolitano Central,Santiago,Centro de Salud Familiar Matta Sur,42,194,490
+S.S. Metropolitano Central,Santiago,Centro de Salud Familiar N° 1 Dr. Ramón Corbalán Melgarejo,192,934,1960
+S.S. Metropolitano Central,Santiago,Centro de Salud Familiar Nº 5,59,300,930
+S.S. Metropolitano Central,Santiago,Centro de Salud Familiar Padre Orellana,56,482,860
+S.S. Metropolitano Central,Santiago,Hospital Clínico San Borja Arriarán,15,86,175
+S.S. Metropolitano Central,Santiago,Hospital de Urgencia Asistencia Pública Dr. Alejandro del Río,1,4,9
+S.S. Metropolitano Norte,Colina,CESFAM La Reina de Colina,8,62,131
+S.S. Metropolitano Norte,Colina,Centro Comunitario de Salud Familiar Esmeralda,0,7,13
+S.S. Metropolitano Norte,Colina,Centro de Salud Familiar Colina,39,220,529
+S.S. Metropolitano Norte,Colina,Centro de Salud Familiar Esmeralda,12,96,204
+S.S. Metropolitano Norte,Colina,Posta de Salud Rural Chacabuco (Colina),0,0,0
+S.S. Metropolitano Norte,Colina,Posta de Salud Rural Colorado,0,1,1
+S.S. Metropolitano Norte,Colina,Posta de Salud Rural Las Canteras,0,3,3
+S.S. Metropolitano Norte,Colina,Posta de Salud Rural Los Ingleses,0,4,8
+S.S. Metropolitano Norte,Colina,Posta de Salud Rural Santa Marta de Liray,0,4,6
+S.S. Metropolitano Norte,Colina,SAR Colina,0,0,0
+S.S. Metropolitano Norte,Conchalí,Centro de Salud Familiar Alberto Bachelet Martínez,8,79,183
+S.S. Metropolitano Norte,Conchalí,Centro de Salud Familiar José Symon Ojeda,6,67,139
+S.S. Metropolitano Norte,Conchalí,Centro de Salud Familiar Juanita Aguirre,9,52,105
+S.S. Metropolitano Norte,Conchalí,Centro de Salud Familiar Lucas Sierra,25,159,366
+S.S. Metropolitano Norte,Huechuraba,Centro Comunitario de Salud Familiar Los Libertadores,5,60,78
+S.S. Metropolitano Norte,Huechuraba,Centro de Salud Familiar Dr. Salvador Allende Gossens,7,62,128
+S.S. Metropolitano Norte,Huechuraba,Centro de Salud Familiar Dr. Victor Castro Wiren,5,45,116
+S.S. Metropolitano Norte,Huechuraba,Centro de Salud Familiar El Barrero,3,42,117
+S.S. Metropolitano Norte,Huechuraba,Centro de Salud Familiar La Pincoya,12,92,196
+S.S. Metropolitano Norte,Independencia,Centro de Salud Familiar Agustín Cruz Melo,78,429,893
+S.S. Metropolitano Norte,Independencia,Centro de Salud Familiar Juan Antonio Ríos,24,101,183
+S.S. Metropolitano Norte,Independencia,"Complejo Hospitalario San José (Santiago, Independencia)",4,16,35
+S.S. Metropolitano Norte,Independencia,"Hospital Clínico de Niños Dr. Roberto del Río (Santiago, Independencia)",2,17,30
+S.S. Metropolitano Norte,Independencia,SAPU DR. AGUSTIN CRUZ MELO,0,0,0
+S.S. Metropolitano Norte,Lampa,Centro de Salud Familiar Batuco,7,79,147
+S.S. Metropolitano Norte,Lampa,Centro de Salud Familiar José Bauza Frau,44,235,445
+S.S. Metropolitano Norte,Lampa,Centro de Salud Familiar Juan Pablo II,8,31,70
+S.S. Metropolitano Norte,Lampa,Posta de Salud Rural Juan Pablo II de Lampa,0,0,0
+S.S. Metropolitano Norte,Quilicura,CESFAM Marta Ugarte Román,20,142,491
+S.S. Metropolitano Norte,Quilicura,Centro de Salud Familiar Irene Frei de Cid,16,163,427
+S.S. Metropolitano Norte,Quilicura,Centro de Salud Familiar Manuel Bustos Huerta,13,125,312
+S.S. Metropolitano Norte,Quilicura,Centro de Salud Familiar Presidente Salvador Allende Gossens,125,239,557
+S.S. Metropolitano Norte,Recoleta,Centro de Salud Familiar Cristo Vive (ONG),12,93,212
+S.S. Metropolitano Norte,Recoleta,Centro de Salud Familiar Dr. Juan Petrinovic (Ex Scroggie),0,29,117
+S.S. Metropolitano Norte,Recoleta,Centro de Salud Familiar Quinta Bella,10,51,160
+S.S. Metropolitano Norte,Recoleta,Centro de Salud Familiar Recoleta,14,87,179
+S.S. Metropolitano Norte,Recoleta,Centro de Salud Familiar Valdivieso,22,86,306
+S.S. Metropolitano Norte,Recoleta,SAR Recoleta,0,0,0
+S.S. Metropolitano Norte,Tiltil,Centro de Salud Familiar Huertos Familiares,0,10,25
+S.S. Metropolitano Norte,Tiltil,Hospital de Til Til,8,24,109
+S.S. Metropolitano Norte,Tiltil,Posta de Salud Rural La Capilla de Caleu,0,0,0
+S.S. Metropolitano Norte,Tiltil,Posta de Salud Rural Montenegro,0,0,0
+S.S. Metropolitano Norte,Tiltil,Posta de Salud Rural Polpaico,0,2,4
+S.S. Metropolitano Occidente,Alhué,Centro de Salud Familiar Villa Alhué,3,26,59
+S.S. Metropolitano Occidente,Cerro Navia,Centro de Salud Familiar Cerro Navia,7,75,160
+S.S. Metropolitano Occidente,Cerro Navia,Centro de Salud Familiar Dr. Adalberto Steeger,11,81,215
+S.S. Metropolitano Occidente,Cerro Navia,Centro de Salud Familiar Dr. Arturo Albertz,22,234,614
+S.S. Metropolitano Occidente,Cerro Navia,Centro de Salud Familiar Lo Amor,3,52,138
+S.S. Metropolitano Occidente,Curacavi,Hospital de Curacaví,13,73,192
+S.S. Metropolitano Occidente,El Monte,Centro de Salud Familiar El Monte,8,64,168
+S.S. Metropolitano Occidente,Isla De Maipo,Centro Comunitario de Salud Familiar La Islita,0,10,12
+S.S. Metropolitano Occidente,Isla De Maipo,Centro Comunitario de Salud Familiar San Vicente de Naltagua,0,4,7
+S.S. Metropolitano Occidente,Isla De Maipo,Centro de Salud Familiar Isla de Maipo,5,28,60
+S.S. Metropolitano Occidente,Isla De Maipo,Centro de Salud Familiar La Islita,3,32,57
+S.S. Metropolitano Occidente,Isla De Maipo,Posta de Salud Rural Gacitúa,1,4,9
+S.S. Metropolitano Occidente,Isla De Maipo,Posta de Salud Rural Las Mercedes ( Isla de Maipo ),0,0,3
+S.S. Metropolitano Occidente,Isla De Maipo,Posta de Salud Rural San Antonio de Naltagua,0,3,4
+S.S. Metropolitano Occidente,Lo Prado,Centro de Salud Familiar Dr. Carlos Avendaño,6,101,209
+S.S. Metropolitano Occidente,Lo Prado,Centro de Salud Familiar Dr. Raúl Yazigi,2,52,170
+S.S. Metropolitano Occidente,Lo Prado,Centro de Salud Familiar Pablo Neruda,3,30,102
+S.S. Metropolitano Occidente,Lo Prado,Centro de Salud Familiar Santa Anita,8,51,153
+S.S. Metropolitano Occidente,María Pinto,Centro de Salud Familiar Adriana Madrid De Costabal,1,61,127
+S.S. Metropolitano Occidente,Melipilla,Centro de Salud Familiar Alfarera Rosa Reyes Vilches,0,20,41
+S.S. Metropolitano Occidente,Melipilla,Centro de Salud Familiar Dr. Edelberto Elgueta,6,58,141
+S.S. Metropolitano Occidente,Melipilla,Centro de Salud Familiar Dr. Francisco Boris Soler,5,57,161
+S.S. Metropolitano Occidente,Melipilla,Centro de Salud Familiar Florencia,8,78,207
+S.S. Metropolitano Occidente,Melipilla,Centro de Salud Familiar San Manuel,7,39,65
+S.S. Metropolitano Occidente,Melipilla,Hospital San José (Melipilla),0,0,1
+S.S. Metropolitano Occidente,Melipilla,Posta de Salud Rural Bollenar,0,5,33
+S.S. Metropolitano Occidente,Melipilla,Posta de Salud Rural Pahuilmo,0,7,21
+S.S. Metropolitano Occidente,Melipilla,Posta de salud Rural Pabellón,0,2,3
+S.S. Metropolitano Occidente,Padre Hurtado,Centro de Salud Familiar Juan Pablo II ( Padre Hurtado),51,185,397
+S.S. Metropolitano Occidente,Peñaflor,Centro de Salud Familiar Dr. Fernando Monckeberg,5,53,193
+S.S. Metropolitano Occidente,Peñaflor,Centro de Salud Familiar Peñaflor,55,166,373
+S.S. Metropolitano Occidente,Peñaflor,Hospital de Peñaflor,0,0,2
+S.S. Metropolitano Occidente,Pudahuel,Centro Comunitario de Salud Familiar Concejal Guillermo Flores O.,0,0,0
+S.S. Metropolitano Occidente,Pudahuel,Centro Comunitario de Salud Familiar Mar Caribe,0,1,3
+S.S. Metropolitano Occidente,Pudahuel,Centro Comunitario de Salud Familiar Santa Corina,1,3,9
+S.S. Metropolitano Occidente,Pudahuel,Centro de Referencia de Salud Salvador Allende,0,0,0
+S.S. Metropolitano Occidente,Pudahuel,Centro de Salud Familiar Cardenal Raúl Silva Henríquez,14,70,147
+S.S. Metropolitano Occidente,Pudahuel,Centro de Salud Familiar Dr. Gustavo Molina,13,87,220
+S.S. Metropolitano Occidente,Pudahuel,Centro de Salud Familiar Pudahuel Estrella,11,173,340
+S.S. Metropolitano Occidente,Pudahuel,Centro de Salud Familiar Pudahuel Poniente,119,489,735
+S.S. Metropolitano Occidente,Pudahuel,Centro de Salud Familiar Violeta Parra,31,108,469
+S.S. Metropolitano Occidente,Quinta Normal,Centro de Salud Familiar Andes,17,116,232
+S.S. Metropolitano Occidente,Quinta Normal,Centro de Salud Familiar Garín,10,50,138
+S.S. Metropolitano Occidente,Quinta Normal,Centro de Salud Familiar Lo Franco,20,104,206
+S.S. Metropolitano Occidente,Quinta Normal,"Hospital Dr. Félix Bulnes Cerda (Santiago, Quinta Normal)",1,6,21
+S.S. Metropolitano Occidente,Renca,Centro de Salud Familiar Bicentenario,9,109,289
+S.S. Metropolitano Occidente,Renca,Centro de Salud Familiar Dr. Hernán Urzúa Merino,13,69,223
+S.S. Metropolitano Occidente,Renca,Centro de Salud Familiar Huamachuco,10,30,79
+S.S. Metropolitano Occidente,Renca,Centro de Salud Familiar Renca,19,147,370
+S.S. Metropolitano Occidente,San Pedro,Centro de Salud Familiar San Pedro,12,44,97
+S.S. Metropolitano Occidente,Santiago,"Hospital San Juan de Dios (Santiago, Santiago)",3,23,78
+S.S. Metropolitano Occidente,Santiago,Instituto Traumatológico Dr. Teodoro Gebauer,0,0,0
+S.S. Metropolitano Occidente,Talagante,Centro de Salud Familiar Dr. Alberto Allende Jones,29,201,428
+S.S. Metropolitano Occidente,Talagante,Hospital Adalberto Steeger (Talagante),0,0,0
+S.S. Metropolitano Occidente,Talagante,Posta de Salud Rural Aliro Cárcarmo (Lonquén),1,10,15
+S.S. Metropolitano Oriente,La Reina,Centro de Salud Familiar Juan Pablo II ( La Reina),3,48,82
+S.S. Metropolitano Oriente,La Reina,Centro de Salud Familiar Ossandon,8,52,118
+S.S. Metropolitano Oriente,Las Condes,Centro de Salud Familiar Aníbal Ariztía,14,96,261
+S.S. Metropolitano Oriente,Las Condes,Centro de Salud Familiar Apoquindo,7,73,203
+S.S. Metropolitano Oriente,Lo Barnechea,Centro de Salud Familiar Lo Barnechea,12,106,222
+S.S. Metropolitano Oriente,Macul,Centro de Salud Familiar Félix de Amesti,16,69,150
+S.S. Metropolitano Oriente,Macul,Centro de Salud Familiar Padre Alberto Hurtado,7,46,203
+S.S. Metropolitano Oriente,Macul,Centro de Salud Familiar Santa Julia,9,82,300
+S.S. Metropolitano Oriente,Peñalolén,CESFAM Las Torres,12,135,261
+S.S. Metropolitano Oriente,Peñalolén,Centro de Salud Familiar Cardenal Silva Henríquez,5,52,133
+S.S. Metropolitano Oriente,Peñalolén,Centro de Salud Familiar Carol Urzúa Ibáñez,17,132,353
+S.S. Metropolitano Oriente,Peñalolén,Centro de Salud Familiar La Faena,12,121,325
+S.S. Metropolitano Oriente,Peñalolén,Centro de Salud Familiar Lo Hermida,5,46,119
+S.S. Metropolitano Oriente,Peñalolén,Centro de Salud Familiar Padre Gerardo Whelan,5,54,114
+S.S. Metropolitano Oriente,Peñalolén,Centro de Salud Familiar San Luis,4,43,107
+S.S. Metropolitano Oriente,Peñalolén,"Hospital Dr. Luis Tisné B. (Santiago, Peñalolén)",0,0,0
+S.S. Metropolitano Oriente,Peñalolén,Instituto Nacional de Rehabilitación Infantil Presidente Pedro Aguirre Cerda,0,0,0
+S.S. Metropolitano Oriente,Providencia,Centro de Salud Familiar Aguilucho,2,55,178
+S.S. Metropolitano Oriente,Providencia,Centro de Salud Familiar Dr. Alfonso Leng,7,168,385
+S.S. Metropolitano Oriente,Providencia,Centro de Salud Familiar Dr. Hernán Alessandri,13,71,197
+S.S. Metropolitano Oriente,Providencia,Hospital Del Salvador de Santiago,0,1,3
+S.S. Metropolitano Oriente,Providencia,Hospital Metropolitano ( ex Militar ),0,1,4
+S.S. Metropolitano Oriente,Providencia,Hospital de Niños Dr. Luis Calvo Mackenna,0,15,15
+S.S. Metropolitano Oriente,Providencia,Instituto Nacional Geriátrico Presidente Eduardo Frei Montalva,0,0,0
+S.S. Metropolitano Oriente,Providencia,Instituto Nacional de Enfermedades Respiratorias y Cirugía Torácica,0,4,18
+S.S. Metropolitano Oriente,Providencia,Instituto de Neurocirugía Dr. Alfonso Asenjo,0,0,5
+S.S. Metropolitano Oriente,Vitacura,Centro de Salud Familiar Vitacura,16,82,214
+S.S. Metropolitano Oriente,Ñuñoa,Centro de Salud Familiar Rosita Renard,23,151,392
+S.S. Metropolitano Oriente,Ñuñoa,Centro de Salud Familiar Salvador Bustos,121,1018,2687
+S.S. Metropolitano Sur,Buin,Centro Comunitario de Salud Familiar Dr. Héctor García,0,17,46
+S.S. Metropolitano Sur,Buin,Centro Comunitario de Salud Familiar Dr. Ramón Galindo,0,3,27
+S.S. Metropolitano Sur,Buin,Centro de Salud Familiar Alto Jahuel,1,28,107
+S.S. Metropolitano Sur,Buin,Centro de Salud Familiar Dr. Héctor García,20,234,440
+S.S. Metropolitano Sur,Buin,Centro de Salud Familiar Maipo,10,47,114
+S.S. Metropolitano Sur,Buin,Hospital San Luis (Buin),0,0,0
+S.S. Metropolitano Sur,Buin,Posta de Salud Rural El Recurso,0,0,0
+S.S. Metropolitano Sur,Buin,Posta de Salud Rural Los Morros,0,0,0
+S.S. Metropolitano Sur,Buin,Posta de Salud Rural Valdivia de Paine,1,5,9
+S.S. Metropolitano Sur,Buin,Posta de Salud Rural Viluco,1,8,19
+S.S. Metropolitano Sur,Calera De Tango,Centro de Salud Familiar Calera de Tango,2,25,54
+S.S. Metropolitano Sur,Calera De Tango,Centro de Salud Familiar Los Bajos de San Agustín,6,17,52
+S.S. Metropolitano Sur,El Bosque,Centro de Salud Familiar Canciller Orlando Letelier,23,73,123
+S.S. Metropolitano Sur,El Bosque,Centro de Salud Familiar Cóndores de Chile,17,45,104
+S.S. Metropolitano Sur,El Bosque,Centro de Salud Familiar Dr. Carlos Lorca Tobar,25,69,154
+S.S. Metropolitano Sur,El Bosque,Centro de Salud Familiar Dr. Mario Salcedo,8,57,98
+S.S. Metropolitano Sur,El Bosque,Centro de Salud Familiar Dra. Haydeé López Casoou,5,50,100
+S.S. Metropolitano Sur,El Bosque,Centro de Salud Familiar Santa Laura,12,60,142
+S.S. Metropolitano Sur,La Cisterna,Centro de Salud Familiar Eduardo Frei Montalva,64,337,718
+S.S. Metropolitano Sur,La Cisterna,Centro de Salud Familiar Santa Anselma,41,356,615
+S.S. Metropolitano Sur,La Granja,Centro de Salud Familiar Padre Esteban Gumucio Vives,18,54,143
+S.S. Metropolitano Sur,Lo Espejo,Centro de Salud Familiar Clara Estrella,9,101,184
+S.S. Metropolitano Sur,Lo Espejo,Centro de Salud Familiar Dra. Mariela Salgado Zepeda,6,31,81
+S.S. Metropolitano Sur,Lo Espejo,Centro de Salud Familiar Julio Acuña Pinzón,31,83,160
+S.S. Metropolitano Sur,Lo Espejo,Centro de Salud Familiar Pueblo Lo Espejo,11,73,163
+S.S. Metropolitano Sur,Paine,Centro de Salud Familiar Dr. Miguel Ángel Solar (ex CESFAM Paine),11,270,488
+S.S. Metropolitano Sur,Paine,Centro de Salud Familiar Dr. Raúl Moya,5,45,134
+S.S. Metropolitano Sur,Paine,Posta de Salud Rural Abrantes,0,8,13
+S.S. Metropolitano Sur,Paine,Posta de Salud Rural Chada,2,9,18
+S.S. Metropolitano Sur,Paine,Posta de Salud Rural Huelquén,2,29,61
+S.S. Metropolitano Sur,Paine,Posta de Salud Rural Pintué,3,11,32
+S.S. Metropolitano Sur,Paine,Posta de Salud Rural Rangue,1,3,5
+S.S. Metropolitano Sur,Pedro Aguirre Cerda,Centro de Salud Familiar Amador Neghme,11,65,151
+S.S. Metropolitano Sur,Pedro Aguirre Cerda,Centro de Salud Familiar Edgardo Enríquez Fröedden,0,15,113
+S.S. Metropolitano Sur,Pedro Aguirre Cerda,Centro de Salud Familiar Lo Valledor Norte,9,40,119
+S.S. Metropolitano Sur,Pedro Aguirre Cerda,Centro de Salud Familiar Padre Pierre Dubois (Ex La Feria),16,122,293
+S.S. Metropolitano Sur,San Bernardo,Centro Comunitario de Salud Familiar Las Hortensias,0,7,17
+S.S. Metropolitano Sur,San Bernardo,Centro Comunitario de Salud Familiar Rapa Nui,1,6,8
+S.S. Metropolitano Sur,San Bernardo,Centro Comunitario de Salud Familiar Ribera del Maipo,0,0,0
+S.S. Metropolitano Sur,San Bernardo,Centro de Salud Familiar Carol Urzúa,11,229,525
+S.S. Metropolitano Sur,San Bernardo,Centro de Salud Familiar Confraternidad,25,96,225
+S.S. Metropolitano Sur,San Bernardo,Centro de Salud Familiar El Manzano,14,271,534
+S.S. Metropolitano Sur,San Bernardo,Centro de Salud Familiar Juan Pablo II ( San Bernardo),12,88,183
+S.S. Metropolitano Sur,San Bernardo,Centro de Salud Familiar Padre Joan Alsina,77,226,419
+S.S. Metropolitano Sur,San Bernardo,Centro de Salud Familiar Raúl Brañes F.,78,208,542
+S.S. Metropolitano Sur,San Bernardo,Centro de Salud Familiar Raúl Cuevas (Ex-San Bernardo),11,106,231
+S.S. Metropolitano Sur,San Bernardo,"Hospital El Pino (Santiago, San Bernardo)",0,0,0
+S.S. Metropolitano Sur,San Bernardo,Hospital Parroquial de San Bernardo (D),0,0,0
+S.S. Metropolitano Sur,San Joaquín,Centro de Salud Familiar Arturo Baeza Goñi,14,47,156
+S.S. Metropolitano Sur,San Joaquín,Centro de Salud Familiar San Joaquín,15,236,618
+S.S. Metropolitano Sur,San Joaquín,Centro de Salud Familiar Santa Teresa de Los Andes,56,114,289
+S.S. Metropolitano Sur,San Miguel,Centro de Salud Familiar Barros Luco,28,347,704
+S.S. Metropolitano Sur,San Miguel,Centro de Salud Familiar Recreo,124,246,518
+S.S. Metropolitano Sur,San Miguel,"Hospital Barros Luco Trudeau (Santiago, San Miguel)",0,0,0
+S.S. Metropolitano Sur,San Miguel,"Hospital Dr. Exequiel González Cortés (Santiago, San Miguel)",0,9,16
+S.S. Metropolitano Sur,San Miguel,"Hospital de Enfermedades Infecciosas Dr. Lucio Córdova (Santiago, San Miguel)",4,18,42
+S.S. Metropolitano Sur Oriente,La Florida,Centro de Salud Familiar Bellavista,11,54,149
+S.S. Metropolitano Sur Oriente,La Florida,Centro de Salud Familiar Dr. Fernando Maffioletti,13,93,178
+S.S. Metropolitano Sur Oriente,La Florida,Centro de Salud Familiar José Alvo,2,38,125
+S.S. Metropolitano Sur Oriente,La Florida,Centro de Salud Familiar La Florida,459,1682,3365
+S.S. Metropolitano Sur Oriente,La Florida,Centro de Salud Familiar Los Castaños,6,87,165
+S.S. Metropolitano Sur Oriente,La Florida,Centro de Salud Familiar Los Quillayes,7,140,251
+S.S. Metropolitano Sur Oriente,La Florida,Centro de Salud Familiar Santa Amalia,5,52,100
+S.S. Metropolitano Sur Oriente,La Florida,Centro de Salud Familiar Trinidad,6,63,118
+S.S. Metropolitano Sur Oriente,La Florida,Centro de Salud Familiar Villa O'Higgins,3,39,120
+S.S. Metropolitano Sur Oriente,La Florida,Hospital Clínico Metropolitano La Florida Dra. Eloísa Díaz Insunza,0,0,0
+S.S. Metropolitano Sur Oriente,La Granja,Centro de Salud Familiar Granja Sur,34,83,235
+S.S. Metropolitano Sur Oriente,La Granja,Centro de Salud Familiar La Granja,9,50,136
+S.S. Metropolitano Sur Oriente,La Granja,Centro de Salud Familiar Malaquías Concha,6,55,109
+S.S. Metropolitano Sur Oriente,La Pintana,Centro de Salud Familiar El Roble,19,70,229
+S.S. Metropolitano Sur Oriente,La Pintana,Centro de Salud Familiar Flor Fernández,4,33,72
+S.S. Metropolitano Sur Oriente,La Pintana,Centro de Salud Familiar Juan Pablo II Red de Salud UC CHRISTUS,4,42,109
+S.S. Metropolitano Sur Oriente,La Pintana,Centro de Salud Familiar Pablo de Rokha,17,80,243
+S.S. Metropolitano Sur Oriente,La Pintana,Centro de Salud Familiar San Rafael,12,104,182
+S.S. Metropolitano Sur Oriente,La Pintana,Centro de Salud Familiar Santiago de Nueva Extremadura,8,74,202
+S.S. Metropolitano Sur Oriente,La Pintana,Centro de Salud Familiar Santo Tomás,3,45,116
+S.S. Metropolitano Sur Oriente,Pirque,Centro de Salud Familiar Dr. José Manuel Balmaceda,3,35,96
+S.S. Metropolitano Sur Oriente,Pirque,Centro de Salud Rural El Principal,3,24,59
+S.S. Metropolitano Sur Oriente,Puente Alto,Centro de Referencia de Salud Hospital Provincia Cordillera,0,0,0
+S.S. Metropolitano Sur Oriente,Puente Alto,Centro de Salud Familiar Bernardo Leighton,13,78,215
+S.S. Metropolitano Sur Oriente,Puente Alto,Centro de Salud Familiar Cardenal Silva Henríquez,9,98,257
+S.S. Metropolitano Sur Oriente,Puente Alto,Centro de Salud Familiar Dr. Alejandro del Río,66,541,1171
+S.S. Metropolitano Sur Oriente,Puente Alto,Centro de Salud Familiar Karol Wojtyla,11,112,135
+S.S. Metropolitano Sur Oriente,Puente Alto,Centro de Salud Familiar Laurita Vicuña,17,145,320
+S.S. Metropolitano Sur Oriente,Puente Alto,Centro de Salud Familiar Madre Teresa de Calcuta Red de Salud UC CHRISTUS,7,46,106
+S.S. Metropolitano Sur Oriente,Puente Alto,Centro de Salud Familiar Padre Manuel Villaseca,27,286,759
+S.S. Metropolitano Sur Oriente,Puente Alto,Centro de Salud Familiar San Alberto Hurtado Red de Salud UC CHRISTUS,19,67,127
+S.S. Metropolitano Sur Oriente,Puente Alto,Centro de Salud Familiar San Gerónimo,17,143,309
+S.S. Metropolitano Sur Oriente,Puente Alto,Centro de Salud Familiar Vista Hermosa,13,107,223
+S.S. Metropolitano Sur Oriente,Puente Alto,"Complejo Hospitalario Dr. Sótero del Río (Santiago, Puente Alto)",0,0,4
+S.S. Metropolitano Sur Oriente,San José de Maipo,Hospital San José de Maipo,3,73,109
+S.S. Metropolitano Sur Oriente,San José de Maipo,Posta de Salud Rural Las Vertientes,3,18,46
+S.S. Metropolitano Sur Oriente,San Ramón,Centro de Salud Familiar Dr. Salvador Allende (Ex Consultorio San Ramón),5,74,192
+S.S. Metropolitano Sur Oriente,San Ramón,Centro de Salud Familiar La Bandera,3,38,91
+S.S. Metropolitano Sur Oriente,San Ramón,Centro de Salud Familiar Poetisa Gabriela Mistral,8,104,210
+S.S. Metropolitano Sur Oriente,San Ramón,Hospital Padre Alberto Hurtado (San Ramón),0,2,4
+SEREMI Metropolitana de Santiago,Buin,Centro Medico KINEROD,0,7,23
+SEREMI Metropolitana de Santiago,Buin,KUME FELEN SPA,1,12,23
+SEREMI Metropolitana de Santiago,Colina,Centro Médico Clinica Las Condes de Chicureo (Servicios de Salud Integrados S.A.),7,23,60
+SEREMI Metropolitana de Santiago,Colina,Centro Médico Clínica Alemana de Chicureo,11,45,102
+SEREMI Metropolitana de Santiago,Colina,VACUNATORIO CHICUREO SpA,0,1,8
+SEREMI Metropolitana de Santiago,El Bosque,Consultorio Tantauco,2,4,20
+SEREMI Metropolitana de Santiago,Estación Central,Clínica Hospital del Profesor,7,45,100
+SEREMI Metropolitana de Santiago,Estación Central,Hospital Clínico Mutual de Seguridad C.CH.C.,0,2,7
+SEREMI Metropolitana de Santiago,Estación Central,Red Salud Santiago ex Clínica Bicentenario,5,61,127
+SEREMI Metropolitana de Santiago,Independencia,Centro Médico RedSalud Barrio Independencia,0,0,0
+SEREMI Metropolitana de Santiago,Independencia,Hospital Clínico Universidad de Chile,6,35,75
+SEREMI Metropolitana de Santiago,La Florida,Clínica Bupa Santiago,9,45,109
+SEREMI Metropolitana de Santiago,La Florida,Clínica Vespucio,25,164,263
+SEREMI Metropolitana de Santiago,La Reina,Hospital Militar de Santiago,7,60,117
+SEREMI Metropolitana de Santiago,La Reina,Vacunatorio Darvax,12,45,92
+SEREMI Metropolitana de Santiago,Las Condes,CENTRO DE VACUNACION INMUNOVAC,1,20,35
+SEREMI Metropolitana de Santiago,Las Condes,CENTRO MEDICO BALMORAL,0,1,4
+SEREMI Metropolitana de Santiago,Las Condes,Centro Médico Militar Rosa O'Higgins,1,1,16
+SEREMI Metropolitana de Santiago,Las Condes,Centro Médico y Dental Arauco Salud,0,19,38
+SEREMI Metropolitana de Santiago,Las Condes,Clínica Las Condes,17,51,112
+SEREMI Metropolitana de Santiago,Las Condes,Clínica San Carlos de Apoquindo Red de Salud UC CHRISTUS,4,46,112
+SEREMI Metropolitana de Santiago,Las Condes,Hospital Clínico Universidad de Los Andes,21,86,173
+SEREMI Metropolitana de Santiago,Las Condes,Hospital FACH,2,41,96
+SEREMI Metropolitana de Santiago,Las Condes,Nueva Clínica Cordillera,0,5,18
+SEREMI Metropolitana de Santiago,Las Condes,Vacunatorio Medicien Alto El Plomo,1,3,8
+SEREMI Metropolitana de Santiago,Lo Barnechea,Centro Dental REDSalud La Dehesa,0,0,0
+SEREMI Metropolitana de Santiago,Lo Barnechea,Centro Médico Clínica Alemana (La Dehesa),21,84,199
+SEREMI Metropolitana de Santiago,Lo Barnechea,Centro Médico Clínica Santa María La Dehesa,6,17,49
+SEREMI Metropolitana de Santiago,Lo Barnechea,Clínica MEDS La Dehesa,2,22,55
+SEREMI Metropolitana de Santiago,Macul,Centro Médico San Joaquín Red de Salud UC CHRISTUS,3,52,138
+SEREMI Metropolitana de Santiago,Maipú,Clínica Indisa (Maipú),8,50,131
+SEREMI Metropolitana de Santiago,Maipú,Vacunatorio INMUVAX,0,2,6
+SEREMI Metropolitana de Santiago,Melipilla,Clínica Los Maitenes,1,2,10
+SEREMI Metropolitana de Santiago,Peñalolén,Centro Médico Alto Tobalaba - Vacunatorio Vacci Protex,6,14,26
+SEREMI Metropolitana de Santiago,Peñalolén,Clínica Las Condes Peñalolén,5,30,70
+SEREMI Metropolitana de Santiago,Providencia,Centro Atencion de Salud Mutual Providencia,0,0,0
+SEREMI Metropolitana de Santiago,Providencia,Centro Médico HTS SpA,1,6,15
+SEREMI Metropolitana de Santiago,Providencia,Clínica Indisa,21,153,303
+SEREMI Metropolitana de Santiago,Providencia,Clínica Santa María,27,134,243
+SEREMI Metropolitana de Santiago,Providencia,VACUMED,0,0,0
+SEREMI Metropolitana de Santiago,Providencia,VAXPROSALUD,0,13,34
+SEREMI Metropolitana de Santiago,Providencia,Vacunatorio Clínica El Bosque,3,21,40
+SEREMI Metropolitana de Santiago,Providencia,Vacunatorio Internacional Immunitas SpA,4,9,24
+SEREMI Metropolitana de Santiago,Providencia,Vacunatorio Mediclown,0,5,9
+SEREMI Metropolitana de Santiago,Providencia,Vacunatorio RENVAC,3,4,15
+SEREMI Metropolitana de Santiago,Pudahuel,Centro Medico y Dental Del Valle,0,0,0
+SEREMI Metropolitana de Santiago,Recoleta,Clínica Dávila,5,59,148
+SEREMI Metropolitana de Santiago,Santiago,Centro Médico Vida Integra Alameda,0,0,0
+SEREMI Metropolitana de Santiago,Santiago,Centro Médico y Dental Fundación Asistencial Trabajadores Del Banco del Estado de Chile,0,6,46
+SEREMI Metropolitana de Santiago,Santiago,Centro Médico y Dental Megasalud Alameda,1,9,22
+SEREMI Metropolitana de Santiago,Santiago,Clínica Juan Pablo II,0,0,1
+SEREMI Metropolitana de Santiago,Santiago,Hospital Clínico Instituto de Seguridad del Trabajo de Santiago,0,0,4
+SEREMI Metropolitana de Santiago,Santiago,Hospital Clínico Red de Salud UC CHRISTUS,0,0,0
+SEREMI Metropolitana de Santiago,Santiago,Vacunatorio Marcoleta de la Pontificia Universidad Católica de Chile,8,67,171
+SEREMI Metropolitana de Santiago,Talagante,Vacunatorio NEWVAX,0,1,7
+SEREMI Metropolitana de Santiago,Vitacura,Clínica Alemana,34,152,357
+SEREMI Metropolitana de Santiago,Vitacura,Clínica Tabancura,7,41,91
+SEREMI Metropolitana de Santiago,Vitacura,Procedimientos Clínicos Alto Tabancura,0,12,18
+SEREMI Metropolitana de Santiago,Ñuñoa,Hospital Carabineros,4,72,180
+SEREMI Metropolitana de Santiago,Ñuñoa,Vacunatorio Pharmavisan,0,0,0
+SEREMI Metropolitana de Santiago,Ñuñoa,Vacunatorio Varik,1,12,17
